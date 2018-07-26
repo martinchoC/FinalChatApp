@@ -23,6 +23,9 @@ class SignUpActivity : AppCompatActivity() {
             goToActivity<LoginActivity>{
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //if I go back or proceed
             }
+            //in animation, out animation
+            //overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
+            //overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
         }
 
         buttonSignUp.setOnClickListener {
@@ -30,6 +33,7 @@ class SignUpActivity : AppCompatActivity() {
             val password = editTextPassword.text.toString()
             if (isValidEmailAndPassword(email, password)) {
                 signUpByEmail(email, password)
+
             }
             else {
                 toast("Please fill all the data and confirm password.")
@@ -46,6 +50,10 @@ class SignUpActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
                         toast( "An email has been sent to you. Please, confirm before sign in.")
+                        goToActivity<LoginActivity>{
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //if I go back or proceed
+                        }
+                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                     } else {
                         // If sign in fails, display a message to the user.
                         toast("An unexpected error occurred. Please try again.")
