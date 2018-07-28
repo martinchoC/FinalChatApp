@@ -27,6 +27,7 @@ inline fun <reified T : Activity> Activity.goToActivity(noinline init: Intent.()
     startActivity(intent)
 }
 
+//real time validation
 fun EditText.validate(validation: (String) -> Unit) {
     this.addTextChangedListener(object : TextWatcher {
         override fun afterTextChanged(editable: Editable) {
@@ -41,11 +42,13 @@ fun EditText.validate(validation: (String) -> Unit) {
     })
 }
 
+//email validation
 fun Activity.isValidEmail(email: String): Boolean {
     val pattern = Patterns.EMAIL_ADDRESS
     return pattern.matcher(email).matches()
 }
 
+//password validation
 fun Activity.isValidPassword(password: String): Boolean {
     // Necesita Contener -->    1 Num / 1 Minuscula / 1 Mayuscula / 1 Special / Min Caracteres 4
     val passwordPattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$"

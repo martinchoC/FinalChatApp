@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.martin.finalapp.R
 import com.google.firebase.auth.FirebaseAuth
-import com.martin.finalapp.extensions.goToActivity
-import com.martin.finalapp.extensions.toast
+import com.martin.finalapp.extensions.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 
@@ -40,7 +39,18 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
 
+        editTextEmail.validate {
+            editTextEmail.error = if (isValidEmail(it)) null else "Email is not valid"
+        }
 
+        editTextPassword.validate {
+            // Necesita Contener -->    1 Num / 1 Minuscula / 1 Mayuscula / 1 Special / Min Caracteres 4
+            editTextPassword.error = if (isValidPassword(it)) null else "Password should contain at least 1 lowercase, 1 uppercase, 1 number & 1 special character, and at least 4 characters"
+        }
+
+        editTextConfirmPassword.validate {
+            editTextConfirmPassword.error = if (isValidConfirmPassword(editTextConfirmPassword.text.toString(), it)) null else "Confirm password does not match with password"
+        }
 
     }
 
@@ -65,6 +75,6 @@ class SignUpActivity : AppCompatActivity() {
         return !email.isNullOrEmpty() &&
                !password.isNullOrEmpty() &&
                //!editTextConfirmPassword.text.isNullOrEmpty() && -->NOT NECESSARY
-                password == editTextConfirmPassword.text.toString()
+                password == editTextConfirmPassword.text.toString() ///3= ->chequea la referencia a los objetos
     }
 }
