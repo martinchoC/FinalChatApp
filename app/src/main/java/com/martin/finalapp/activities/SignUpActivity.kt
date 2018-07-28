@@ -30,12 +30,12 @@ class SignUpActivity : AppCompatActivity() {
         buttonSignUp.setOnClickListener {
             val email = editTextEmail.text.toString()
             val password = editTextPassword.text.toString()
-            if (isValidEmailAndPassword(email, password)) {
+            val confirmPassword= editTextConfirmPassword.text.toString()
+            if (isValidEmail(email) && isValidPassword(password) && isValidConfirmPassword(password, confirmPassword)) {
                 signUpByEmail(email, password)
-
             }
             else {
-                toast("Please fill all the data and confirm password.")
+                toast("Please make sure all data is correct.")
             }
         }
 
@@ -58,23 +58,18 @@ class SignUpActivity : AppCompatActivity() {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
-                        toast( "An email has been sent to you. Please, confirm before sign in.")
-                        goToActivity<LoginActivity>{
-                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //if I go back or proceed
+                        mAuth.currentUser!!.sendEmailVerification().addOnCompleteListener(this) {
+                            // Sign in success, update UI with the signed-in user's information
+                            toast( "An email has been sent to you. Please, confirm before sign in.")
+                            goToActivity<LoginActivity>{
+                                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK //if I go back or proceed
+                            }
+                            overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                         }
-                        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
                     } else {
                         // If sign in fails, display a message to the user.
                         toast("An unexpected error occurred. Please try again.")
                     }
                 }
-    }
-
-    private fun isValidEmailAndPassword(email: String, password: String) :Boolean {
-        return !email.isNullOrEmpty() &&
-               !password.isNullOrEmpty() &&
-               //!editTextConfirmPassword.text.isNullOrEmpty() && -->NOT NECESSARY
-                password == editTextConfirmPassword.text.toString() ///3= ->chequea la referencia a los objetos
     }
 }
