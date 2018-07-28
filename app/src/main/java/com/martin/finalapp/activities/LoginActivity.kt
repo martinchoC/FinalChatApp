@@ -10,6 +10,7 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.martin.finalapp.MainActivity
 import com.martin.finalapp.R
 import kotlinx.android.synthetic.main.activity_login.*
 import com.martin.finalapp.extensions.*
@@ -66,7 +67,12 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
         //get credentials
         val credential = GoogleAuthProvider.getCredential(googleAccount.idToken, null)
         mAuth.signInWithCredential(credential).addOnCompleteListener(this) {
-            toast("Sign in by Google!")
+            if (mGoogleApiClient.isConnected) {
+                Auth.GoogleSignInApi.signOut(mGoogleApiClient)
+            }
+            goToActivity<MainActivity> {
+                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            }
         }
     }
 

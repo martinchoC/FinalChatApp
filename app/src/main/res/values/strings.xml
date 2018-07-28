@@ -13,4 +13,9 @@
     <string name="login_create_account">Create a new account</string>
     <string name="login_go_login">Go back to Login</string>
 
+    <!-- Bottom Navigation Menu -->
+    <string name="navigation_bottom_info">Info</string>
+    <string name="navigation_bottom_rates">Rates</string>
+    <string name="navigation_bottom_chat">Chat</string>
+
 </resources>
