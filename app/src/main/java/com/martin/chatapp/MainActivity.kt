@@ -1,17 +1,17 @@
-package com.martin.finalapp
+package com.martin.chatapp
 
 import android.os.Bundle
 import android.support.v4.view.ViewPager
-import com.martin.finalapp.adapters.PagerAdapter
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import com.google.firebase.auth.FirebaseAuth
-import com.martin.finalapp.R
-import com.martin.finalapp.fragments.ChatFragment
-import com.martin.finalapp.fragments.InfoFragment
-import com.martin.finalapp.fragments.RatesFragment
-import com.martin.mylibrary.ToolbarActivity
+import com.martin.chatapp.adapters.PagerAdapter
+import com.martin.chatapp.fragments.ChatFragment
+import com.martin.chatapp.fragments.InfoFragment
+import com.martin.chatapp.fragments.RatesFragment
+import com.martin.toolbarlibrary.ToolbarActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : ToolbarActivity() {
 
@@ -30,9 +30,10 @@ class MainActivity : ToolbarActivity() {
 
     private fun getPagerAdapter(): PagerAdapter {
         adapter = PagerAdapter(supportFragmentManager)
-        adapter.addFragment(ChatFragment())
         adapter.addFragment(InfoFragment())
         adapter.addFragment(RatesFragment())
+        adapter.addFragment(ChatFragment())
+
         return adapter
     }
 
@@ -61,19 +62,17 @@ class MainActivity : ToolbarActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.bottom_nav_info -> {
-                    viewPager.currentItem = 0
-                    true
+                    viewPager.currentItem = 0;true
                 }
                 R.id.bottom_nav_rates -> {
-                    viewPager.currentItem = 1
-                    true
+                    viewPager.currentItem = 1;true
                 }
                 R.id.bottom_nav_chat -> {
-                    viewPager.currentItem = 2
-                    true
+                    viewPager.currentItem = 2;true
                 }
                 else -> false
             }
         }
     }
+
 }

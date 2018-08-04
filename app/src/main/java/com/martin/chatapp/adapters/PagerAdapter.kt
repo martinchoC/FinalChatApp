@@ -1,4 +1,4 @@
-package com.martin.finalapp.adapters
+package com.martin.chatapp.adapters
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager

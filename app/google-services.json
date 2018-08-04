@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "82451274347",
-    "firebase_url": "https://finalapp-a4b11.firebaseio.com",
-    "project_id": "finalapp-a4b11",
-    "storage_bucket": "finalapp-a4b11.appspot.com"
+    "project_number": "247937099515",
+    "firebase_url": "https://chatapp-f75b8.firebaseio.com",
+    "project_id": "chatapp-f75b8",
+    "storage_bucket": "chatapp-f75b8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:82451274347:android:c7b739b2d86c6623",
+        "mobilesdk_app_id": "1:247937099515:android:d29de905d707f7c9",
         "android_client_info": {
-          "package_name": "com.martin.finalapp"
+          "package_name": "com.martin.chatapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "82451274347-l02s3k8tojuqat77hj8hirs4rmvpak3f.apps.googleusercontent.com",
+          "client_id": "247937099515-hqirf71h8capnugpne4nckm4o6u0p6tb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.martin.finalapp",
-            "certificate_hash": "83319d544940cf857840ddbc9fd877cd9f3f895c"
+            "package_name": "com.martin.chatapp",
+            "certificate_hash": "656dfa28a3456959c8f302aebccc0f2e9b191198"
           }
         },
         {
-          "client_id": "82451274347-jigdnbtbfs9034fg88asjkc5ntv2e2rv.apps.googleusercontent.com",
+          "client_id": "247937099515-p8isanf794fe5oqeo8p4h9n9iu5onc8a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC4u3H-ZH5uVU6bGlKsw0zID3V24bLshMA"
+          "current_key": "AIzaSyABSqu5EFTpskGJ6c0PXMyGis7lO7OJpgQ"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "82451274347-jigdnbtbfs9034fg88asjkc5ntv2e2rv.apps.googleusercontent.com",
+              "client_id": "247937099515-p8isanf794fe5oqeo8p4h9n9iu5onc8a.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

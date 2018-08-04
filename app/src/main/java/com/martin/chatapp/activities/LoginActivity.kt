@@ -1,8 +1,9 @@
-package com.martin.finalapp.activities
+package com.martin.chatapp.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.martin.chatapp.R
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -10,10 +11,9 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.martin.finalapp.MainActivity
-import com.martin.finalapp.R
+import com.martin.chatapp.MainActivity
+import com.martin.chatapp.extensions.*
 import kotlinx.android.synthetic.main.activity_login.*
-import com.martin.finalapp.extensions.*
 
 
 class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener {
@@ -124,3 +124,4 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
     }
 
 }
+

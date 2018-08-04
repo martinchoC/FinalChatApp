@@ -1,11 +1,11 @@
-package com.martin.finalapp.activities
+package com.martin.chatapp.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.martin.finalapp.R
+import com.martin.chatapp.R
 import com.google.firebase.auth.FirebaseAuth
-import com.martin.finalapp.extensions.*
+import com.martin.chatapp.extensions.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 
@@ -72,4 +72,6 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
     }
+
 }
+

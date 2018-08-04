@@ -1,4 +1,4 @@
-package com.martin.finalapp.extensions
+package com.martin.chatapp.extensions
 
 import android.app.Activity
 import android.content.Intent

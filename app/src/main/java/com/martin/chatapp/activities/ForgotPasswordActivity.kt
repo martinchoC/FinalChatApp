@@ -1,14 +1,14 @@
-package com.martin.finalapp.activities
+package com.martin.chatapp.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import com.martin.finalapp.R
-import com.martin.finalapp.extensions.goToActivity
-import com.martin.finalapp.extensions.isValidEmail
-import com.martin.finalapp.extensions.toast
-import com.martin.finalapp.extensions.validate
+import com.martin.chatapp.R
+import com.martin.chatapp.extensions.goToActivity
+import com.martin.chatapp.extensions.isValidEmail
+import com.martin.chatapp.extensions.toast
+import com.martin.chatapp.extensions.validate
 import kotlinx.android.synthetic.main.activity_forgot_password.*
 
 class ForgotPasswordActivity : AppCompatActivity() {

@@ -1,5 +1,4 @@
-package com.martin.finalapp.fragments
-
+package com.martin.chatapp.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-import com.martin.finalapp.R
+import com.martin.chatapp.R
 
 class RatesFragment : Fragment() {
 

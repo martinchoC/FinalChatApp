@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.martin.finalapp">
+    package="com.martin.chatapp">
 
     <application
         android:allowBackup="true"
@@ -11,8 +11,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".activities.MainEmptyActivity"
-
+            android:name=".MainEmptyActivity"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,23 +19,16 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
 
-        <activity
-            android:name=".activities.LoginActivity"
-            android:theme="@style/NoPreview"
-            android:windowSoftInputMode="adjustPan">
+        <activity android:name=".activities.LoginActivity"
+                  android:theme="@style/NoPreview"
+                  android:windowSoftInputMode="adjustPan"/>
 
-        </activity>
+        <activity android:name=".activities.ForgotPasswordActivity"
+                  android:windowSoftInputMode="adjustPan"/>
 
-        <activity android:name=".activities.SignUpActivity">
-
-        </activity>
-
-        <activity
-            android:name=".activities.ForgotPasswordActivity"
-            android:windowSoftInputMode="adjustPan" />
-
+        <activity android:name=".activities.SignUpActivity"/>
 
     </application>
 

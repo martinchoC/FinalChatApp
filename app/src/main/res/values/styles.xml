@@ -14,7 +14,6 @@
     </style>
 
     <style name="NoPreview" parent="AppTheme">
-        <!-- Disable change with white between activities. -->
         <item name="android:windowDisablePreview">true</item>
     </style>
 

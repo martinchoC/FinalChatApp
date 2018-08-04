@@ -1,4 +1,4 @@
-package com.martin.finalapp
+package com.martin.chatapp
 
 import org.junit.Test
 
