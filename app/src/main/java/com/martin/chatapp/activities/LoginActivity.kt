@@ -82,7 +82,9 @@ class LoginActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLis
                     if (task.isSuccessful) {
                         if (mAuth.currentUser!!.isEmailVerified) {
                             // Sign in success, update UI with the signed-in user's information
-                            toast("User is now logged in.")
+                            goToActivity<MainActivity> {
+                                flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            }
                         }
                         else {
                             toast("User must confirm email first.")
