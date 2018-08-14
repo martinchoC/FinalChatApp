@@ -1,10 +1,11 @@
 package com.martin.chatapp.models
 
-import java.util.*
+import java.util.Date
 
-data class Rate (
-        val text: String,
-        val rate: Float,
-        val createdAt: Date,
-        val profileUmgURL: String = ""
+data class Rate(
+        val userId: String = "",
+        val text: String = "",
+        val rate: Float = 0f,
+        val createdAt: Date = Date(),
+        val profileImgURL: String = ""
 )

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Final App</string>
+    <string name="app_name">Chat App</string>
 
     <!-- Login View -->
     <string name="login_email">Email</string>

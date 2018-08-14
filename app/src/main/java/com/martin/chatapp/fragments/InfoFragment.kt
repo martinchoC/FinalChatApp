@@ -15,6 +15,7 @@ import com.martin.chatapp.models.TotalMessagesEvent
 import com.martin.chatapp.utils.CircleTransform
 import com.martin.chatapp.utils.RxBus
 import com.squareup.picasso.Picasso
+import io.reactivex.disposables.Disposable
 import kotlinx.android.synthetic.main.fragment_info.view.*
 import java.util.EventListener
 
@@ -31,6 +32,7 @@ class InfoFragment : Fragment() {
     private lateinit var chatDBRef: CollectionReference
 
     private var chatSubscription: ListenerRegistration? = null
+    private lateinit var infoBusListener: Disposable
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -64,7 +66,7 @@ class InfoFragment : Fragment() {
         //if user logs in with gmail, name = currentUser.displayName, ELSE(?: elvis operator) R.info_no_name
         _view.textViewInfoName.text = currentUser.displayName?.let { currentUser.displayName } ?: run { getString(R.string.info_no_name) }
         currentUser.photoUrl?. let {
-                Picasso.get().load(currentUser.photoUrl).resize(100,100)
+                Picasso.get().load(currentUser.photoUrl).resize(200,200)
                         .centerCrop().transform(CircleTransform()).into(_view.imageViewInfoAvatar)
         } ?: run {
             Picasso.get().load(R.drawable.ic_person).resize(300,300)
@@ -88,12 +90,13 @@ class InfoFragment : Fragment() {
     }
 
     private fun subscribeToTotalMessagesEventBusReactiveStyle() {
-        RxBus.listen(TotalMessagesEvent :: class.java).subscribe {
-            _view.textViewInfoTotalMessages.text = "${it.total}"
-        }
+        infoBusListener = RxBus.listen(TotalMessagesEvent :: class.java).subscribe {
+                            _view.textViewInfoTotalMessages.text = "${it.total}"
+                        }
     }
 
     override fun onDestroyView() {
+        infoBusListener.dispose()
         chatSubscription?.remove() //help performance
         super.onDestroyView()
     }

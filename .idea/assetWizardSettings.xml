@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/D:/Programas/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/toggle/ic_star_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/D:/Programas/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_record_voice_over_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,19 +44,53 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_fab_rate" />
-                                      <entry key="theme" value="HOLO_DARK" />
-                                      <entry key="themeColor" value="b92d21" />
+                                      <entry key="outputName" value="icon_launcher" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="2430b9" />
                                     </map>
                                   </option>
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
+                            <entry key="launcher">
+                              <value>
+                                <PersistentState>
+                                  <option name="children">
+                                    <map>
+                                      <entry key="foregroundClipArt">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="2430b9" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                      <entry key="foregroundClipartAsset">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="url" value="jar:file:/D:/Programas/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_record_voice_over_black_24dp.xml" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="b92d21" />
+                                      <entry key="foregroundAssetType" value="CLIP_ART" />
+                                    </map>
+                                  </option>
+                                </PersistentState>
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </PersistentState>

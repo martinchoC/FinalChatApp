@@ -54,7 +54,7 @@ class ChatFragment : Fragment() {
     }
 
     private fun setUpChatDB() {
-        //if collection is not created, it creates ir
+        //if collection is not created, creates it
         chatDBRef = store.collection("chat")
     }
 
